@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Break e Continue - JavaScript</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .code-block { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; margin: 20px 0; overflow-x: auto; }
+        .back-link { display: inline-block; background: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Break e Continue - Controlando Loops</h1>
+        
+        <p>As palavras-chave <code>break</code> e <code>continue</code> nos dão controle extra sobre loops. O break interrompe o loop completamente e sai dele, enquanto o continue pula apenas a iteração atual e vai para a próxima. São ferramentas poderosas para tornar loops mais eficientes e expressar lógica complexa de forma clara.</p>
+
+        <h2>📝 Código:</h2>
+        <div class="code-block">
+<pre>// BREAK - sai do loop completamente
+console.log("=== BREAK ===");
+console.log("Procurando o número 5...");
+
+for (let i = 1; i <= 10; i++) {
+    console.log(`Verificando: ${i}`);
+    
+    if (i === 5) {
+        console.log("✅ Encontrei o 5! Parando o loop.");
+        break;  // sai do loop
+    }
+}
+
+// CONTINUE - pula para próxima iteração
+console.log("\n=== CONTINUE ===");
+console.log("Números de 1 a 10, exceto o 5:");
+
+for (let i = 1; i <= 10; i++) {
+    if (i === 5) {
+        continue;  // pula o 5
+    }
+    console.log(i);
+}
+
+// Exemplo prático: apenas números pares
+console.log("\n=== APENAS NÚMEROS PARES ===");
+
+for (let i = 1; i <= 10; i++) {
+    if (i % 2 !== 0) {
+        continue;  // pula ímpares
+    }
+    console.log(`${i} é par`);
+}
+
+// Exemplo prático: busca em array
+console.log("\n=== BUSCA EM ARRAY ===");
+let nomes = ["Ana", "João", "Maria", "Pedro", "Carlos"];
+let procurado = "Maria";
+let encontrado = false;
+
+for (let i = 0; i < nomes.length; i++) {
+    console.log(`Procurando em: ${nomes[i]}`);
+    
+    if (nomes[i] === procurado) {
+        console.log(`✅ ${procurado} encontrado na posição ${i}`);
+        encontrado = true;
+        break;  // para de procurar
+    }
+}
+
+if (!encontrado) {
+    console.log(`❌ ${procurado} não foi encontrado`);
+}
+
+// Validação de senha
+console.log("\n=== VALIDAÇÃO DE SENHA ===");
+let tentativas = 3;
+let senhaCorreta = "1234";
+
+for (let i = 1; i <= tentativas; i++) {
+    let senhaTentada = i === 2 ? "1234" : "errada";  // simula tentativa
+    
+    console.log(`Tentativa ${i}: senha '${senhaTentada}'`);
+    
+    if (senhaTentada === senhaCorreta) {
+        console.log("✅ Senha correta! Acesso liberado.");
+        break;
+    } else {
+        console.log(`❌ Senha incorreta. ${tentativas - i} tentativas restantes.`);
+    }
+}
+</pre>
+        </div>
+
+        <p><strong>Quando usar:</strong> Use <strong>break</strong> quando encontrar o que procura e não precisar continuar verificando (economiza tempo). Use <strong>continue</strong> quando quiser pular elementos que não atendem a um critério mas ainda processar os demais. Ambos tornam o código mais eficiente e expressivo quando usados apropriadamente.</p>
+
+        <a href="../index.html" class="back-link">← Voltar para o Índice</a>
+    </div>
+
+    <script>
+        console.log("=== BREAK ===");
+        console.log("Procurando o número 5...");
+        for (let i = 1; i <= 10; i++) {
+            console.log(`Verificando: ${i}`);
+            if (i === 5) {
+                console.log("✅ Encontrei o 5! Parando o loop.");
+                break;
+            }
+        }
+
+        console.log("\n=== CONTINUE ===");
+        console.log("Números de 1 a 10, exceto o 5:");
+        for (let i = 1; i <= 10; i++) {
+            if (i === 5) continue;
+            console.log(i);
+        }
+
+        console.log("\n=== APENAS NÚMEROS PARES ===");
+        for (let i = 1; i <= 10; i++) {
+            if (i % 2 !== 0) continue;
+            console.log(`${i} é par`);
+        }
+
+        console.log("\n=== BUSCA EM ARRAY ===");
+        let nomes = ["Ana", "João", "Maria", "Pedro", "Carlos"];
+        let procurado = "Maria";
+        let encontrado = false;
+
+        for (let i = 0; i < nomes.length; i++) {
+            console.log(`Procurando em: ${nomes[i]}`);
+            if (nomes[i] === procurado) {
+                console.log(`✅ ${procurado} encontrado na posição ${i}`);
+                encontrado = true;
+                break;
+            }
+        }
+
+        console.log("\n=== VALIDAÇÃO DE SENHA ===");
+        let tentativas = 3;
+        let senhaCorreta = "1234";
+
+        for (let i = 1; i <= tentativas; i++) {
+            let senhaTentada = i === 2 ? "1234" : "errada";
+            console.log(`Tentativa ${i}: senha '${senhaTentada}'`);
+            if (senhaTentada === senhaCorreta) {
+                console.log("✅ Senha correta! Acesso liberado.");
+                break;
+            } else {
+                console.log(`❌ Senha incorreta. ${tentativas - i} tentativas restantes.`);
+            }
+        }
+    </script>
+</body>
+</html>

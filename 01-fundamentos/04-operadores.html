@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04. Operadores - JavaScript</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .code-block { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; margin: 20px 0; overflow-x: auto; font-family: 'Courier New', monospace; }
+        .back-link { display: inline-block; background: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+        .back-link:hover { background: #764ba2; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #667eea; color: white; }
+        tr:hover { background-color: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>04. Operadores - Fazendo Operações</h1>
+        
+        <p>Operadores são símbolos especiais que realizam operações em valores. JavaScript possui diferentes tipos de operadores que nos permitem fazer cálculos matemáticos, comparar valores e combinar condições lógicas. Dominar os operadores é essencial para escrever código que toma decisões e processa dados.</p>
+
+        <h2>➕ Operadores Matemáticos</h2>
+        <table>
+            <tr>
+                <th>Operador</th>
+                <th>Operação</th>
+                <th>Exemplo</th>
+                <th>Resultado</th>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td>Adição</td>
+                <td>10 + 5</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Subtração</td>
+                <td>10 - 5</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>Multiplicação</td>
+                <td>10 * 5</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>Divisão</td>
+                <td>10 / 5</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Resto da divisão (módulo)</td>
+                <td>10 % 3</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>**</td>
+                <td>Exponenciação</td>
+                <td>2 ** 3</td>
+                <td>8</td>
+            </tr>
+        </table>
+
+        <h2>🔍 Operadores de Comparação</h2>
+        <table>
+            <tr>
+                <th>Operador</th>
+                <th>Significado</th>
+                <th>Exemplo</th>
+                <th>Resultado</th>
+            </tr>
+            <tr>
+                <td>===</td>
+                <td>Igual (valor e tipo)</td>
+                <td>5 === 5</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>!==</td>
+                <td>Diferente (valor ou tipo)</td>
+                <td>5 !== "5"</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>></td>
+                <td>Maior que</td>
+                <td>10 > 5</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td><</td>
+                <td>Menor que</td>
+                <td>3 < 5</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>>=</td>
+                <td>Maior ou igual</td>
+                <td>5 >= 5</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td><=</td>
+                <td>Menor ou igual</td>
+                <td>3 <= 5</td>
+                <td>true</td>
+            </tr>
+        </table>
+
+        <h2>📝 Código:</h2>
+        <div class="code-block">
+<pre>// Operadores Matemáticos
+let a = 10;
+let b = 3;
+
+console.log("=== OPERADORES MATEMÁTICOS ===");
+console.log("a =", a, ", b =", b);
+console.log("a + b =", a + b);   // 13
+console.log("a - b =", a - b);   // 7
+console.log("a * b =", a * b);   // 30
+console.log("a / b =", a / b);   // 3.333...
+console.log("a % b =", a % b);   // 1 (resto)
+console.log("a ** b =", a ** b); // 1000 (10³)
+
+// Operadores de Incremento/Decremento
+let contador = 5;
+console.log("\n=== INCREMENTO/DECREMENTO ===");
+console.log("contador =", contador);
+contador++;  // mesmo que contador = contador + 1
+console.log("contador++ =", contador);  // 6
+contador--;  // mesmo que contador = contador - 1
+console.log("contador-- =", contador);  // 5
+
+// Operadores de Comparação
+console.log("\n=== COMPARAÇÕES ===");
+console.log("10 > 5 →", 10 > 5);      // true
+console.log("10 < 5 →", 10 < 5);      // false
+console.log("10 >= 10 →", 10 >= 10);  // true
+console.log("10 === 10 →", 10 === 10);  // true
+console.log("10 === '10' →", 10 === "10");  // false (tipos diferentes)
+console.log("10 == '10' →", 10 == "10");    // true (== não compara tipo)
+
+// Módulo - verificando par ou ímpar
+console.log("\n=== USO PRÁTICO DO MÓDULO ===");
+let numero = 7;
+console.log(numero, "% 2 =", numero % 2);  // 1 (ímpar)
+console.log("É ímpar?", numero % 2 === 1);  // true
+
+numero = 8;
+console.log(numero, "% 2 =", numero % 2);  // 0 (par)
+console.log("É par?", numero % 2 === 0);    // true</pre>
+        </div>
+
+        <h2>💡 Dica Importante:</h2>
+        <p>Sempre use <code>===</code> e <code>!==</code> para comparações! Os operadores <code>==</code> e <code>!=</code> fazem conversão automática de tipos, o que pode levar a resultados inesperados. Por exemplo, <code>"5" == 5</code> retorna true porque o JavaScript converte a string em número automaticamente, mas isso pode esconder bugs no seu código.</p>
+
+        <p>O operador módulo (%) é muito útil para saber se um número é divisível por outro. Se <code>x % y === 0</code>, significa que x é divisível por y sem resto. Isso é perfeito para verificar números pares (divisíveis por 2), múltiplos de 5, e muitos outros casos.</p>
+
+        <a href="../index.html" class="back-link">← Voltar para o Índice</a>
+    </div>
+
+    <script>
+        // Operadores Matemáticos
+        let a = 10;
+        let b = 3;
+
+        console.log("=== OPERADORES MATEMÁTICOS ===");
+        console.log("a =", a, ", b =", b);
+        console.log("a + b =", a + b);
+        console.log("a - b =", a - b);
+        console.log("a * b =", a * b);
+        console.log("a / b =", a / b);
+        console.log("a % b =", a % b);
+        console.log("a ** b =", a ** b);
+
+        // Operadores de Incremento/Decremento
+        let contador = 5;
+        console.log("\n=== INCREMENTO/DECREMENTO ===");
+        console.log("contador =", contador);
+        contador++;
+        console.log("contador++ =", contador);
+        contador--;
+        console.log("contador-- =", contador);
+
+        // Operadores de Comparação
+        console.log("\n=== COMPARAÇÕES ===");
+        console.log("10 > 5 →", 10 > 5);
+        console.log("10 < 5 →", 10 < 5);
+        console.log("10 >= 10 →", 10 >= 10);
+        console.log("10 === 10 →", 10 === 10);
+        console.log("10 === '10' →", 10 === "10");
+        console.log("10 == '10' →", 10 == "10");
+
+        // Módulo - verificando par ou ímpar
+        console.log("\n=== USO PRÁTICO DO MÓDULO ===");
+        let numero = 7;
+        console.log(numero, "% 2 =", numero % 2);
+        console.log("É ímpar?", numero % 2 === 1);
+
+        numero = 8;
+        console.log(numero, "% 2 =", numero % 2);
+        console.log("É par?", numero % 2 === 0);
+
+        console.log("\n✅ Abra o Console (F12) para ver todos os exemplos!");
+    </script>
+</body>
+</html>

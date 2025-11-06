@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Operadores Lógicos - JavaScript</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .code-block { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; margin: 20px 0; overflow-x: auto; }
+        .back-link { display: inline-block; background: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; border: 1px solid #ddd; }
+        th { background: #667eea; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Operadores Lógicos - Combinando Condições</h1>
+        
+        <p>Operadores lógicos permitem combinar múltiplas condições em uma única verificação. São essenciais quando precisamos que múltiplas condições sejam verdadeiras ao mesmo tempo, ou quando qualquer uma das condições pode ser válida.</p>
+
+        <table>
+            <tr><th>Operador</th><th>Nome</th><th>Descrição</th></tr>
+            <tr><td>&&</td><td>AND (E)</td><td>Verdadeiro se AMBAS as condições forem verdadeiras</td></tr>
+            <tr><td>||</td><td>OR (OU)</td><td>Verdadeiro se PELO MENOS UMA condição for verdadeira</td></tr>
+            <tr><td>!</td><td>NOT (NÃO)</td><td>Inverte o valor: true vira false e vice-versa</td></tr>
+        </table>
+
+        <h2>📝 Código:</h2>
+        <div class="code-block">
+<pre>// Operador AND (&&) - ambos precisam ser verdadeiros
+let idade = 25;
+let temCarteira = true;
+
+console.log("=== OPERADOR AND (&&) ===");
+console.log("Idade:", idade);
+console.log("Tem carteira:", temCarteira);
+
+if (idade >= 18 && temCarteira) {
+    console.log("✅ Pode dirigir!");
+} else {
+    console.log("❌ Não pode dirigir");
+}
+
+// Operador OR (||) - pelo menos um precisa ser verdadeiro
+let pagamentoCartao = false;
+let pagamentoDinheiro = true;
+
+console.log("\n=== OPERADOR OR (||) ===");
+if (pagamentoCartao || pagamentoDinheiro) {
+    console.log("✅ Pode comprar!");
+}
+
+// Operador NOT (!) - inverte o valor
+let chovendo = false;
+
+console.log("\n=== OPERADOR NOT (!) ===");
+console.log("Está chovendo?", chovendo);
+console.log("NÃO está chovendo?", !chovendo);  // inverte
+
+if (!chovendo) {
+    console.log("Dia bom para passear!");
+}
+
+// Combinando múltiplos operadores
+let temperatura = 28;
+let temProtetor = true;
+let horarioSeguro = true;
+
+console.log("\n=== COMBINANDO OPERADORES ===");
+if ((temperatura > 25 && temProtetor) || !horarioSeguro) {
+    console.log("Pode ir à praia com segurança!");
+}
+
+// Exemplo prático: validação de login
+let usuario = "admin";
+let senha = "1234";
+let tentativas = 2;
+
+console.log("\n=== VALIDAÇÃO DE LOGIN ===");
+if (usuario === "admin" && senha === "1234" && tentativas < 3) {
+    console.log("✅ Login bem-sucedido!");
+} else {
+    console.log("❌ Login falhou");
+}
+</pre>
+        </div>
+
+        <a href="../index.html" class="back-link">← Voltar para o Índice</a>
+    </div>
+
+    <script>
+        let idade = 25;
+        let temCarteira = true;
+
+        console.log("=== OPERADOR AND (&&) ===");
+        console.log("Idade:", idade);
+        console.log("Tem carteira:", temCarteira);
+
+        if (idade >= 18 && temCarteira) {
+            console.log("✅ Pode dirigir!");
+        } else {
+            console.log("❌ Não pode dirigir");
+        }
+
+        let pagamentoCartao = false;
+        let pagamentoDinheiro = true;
+
+        console.log("\n=== OPERADOR OR (||) ===");
+        if (pagamentoCartao || pagamentoDinheiro) {
+            console.log("✅ Pode comprar!");
+        }
+
+        let chovendo = false;
+
+        console.log("\n=== OPERADOR NOT (!) ===");
+        console.log("Está chovendo?", chovendo);
+        console.log("NÃO está chovendo?", !chovendo);
+
+        if (!chovendo) {
+            console.log("Dia bom para passear!");
+        }
+
+        let temperatura = 28;
+        let temProtetor = true;
+        let horarioSeguro = true;
+
+        console.log("\n=== COMBINANDO OPERADORES ===");
+        if ((temperatura > 25 && temProtetor) || !horarioSeguro) {
+            console.log("Pode ir à praia com segurança!");
+        }
+
+        let usuario = "admin";
+        let senha = "1234";
+        let tentativas = 2;
+
+        console.log("\n=== VALIDAÇÃO DE LOGIN ===");
+        if (usuario === "admin" && senha === "1234" && tentativas < 3) {
+            console.log("✅ Login bem-sucedido!");
+        } else {
+            console.log("❌ Login falhou");
+        }
+    </script>
+</body>
+</html>

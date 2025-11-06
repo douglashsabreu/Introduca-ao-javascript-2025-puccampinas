@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Parâmetros e Return - JavaScript</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .code-block { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; margin: 20px 0; overflow-x: auto; }
+        .back-link { display: inline-block; background: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parâmetros e Return - Funções Flexíveis</h1>
+        
+        <p>Parâmetros são valores que passamos para a função quando a chamamos, permitindo que a mesma função trabalhe com dados diferentes. O return permite que a função devolva um resultado que pode ser usado em outras partes do código. Juntos, eles tornam as funções extremamente poderosas e flexíveis.</p>
+
+        <h2>📝 Código:</h2>
+        <div class="code-block">
+<pre>// Função com parâmetro
+function saudar(nome) {
+    console.log(`Olá, ${nome}!`);
+}
+
+console.log("=== FUNÇÃO COM PARÂMETRO ===");
+saudar("Maria");
+saudar("João");
+saudar("Ana");
+
+// Múltiplos parâmetros
+function somar(a, b) {
+    let resultado = a + b;
+    console.log(`${a} + ${b} = ${resultado}`);
+}
+
+console.log("\n=== MÚLTIPLOS PARÂMETROS ===");
+somar(5, 3);
+somar(10, 20);
+
+// Função com return
+function multiplicar(x, y) {
+    return x * y;
+}
+
+console.log("\n=== FUNÇÃO COM RETURN ===");
+let resultado1 = multiplicar(4, 5);
+console.log("4 x 5 =", resultado1);
+
+let resultado2 = multiplicar(3, 7);
+console.log("3 x 7 =", resultado2);
+
+// Usando return em expressões
+console.log("\n=== USANDO RETURN ===");
+let total = multiplicar(10, 2) + multiplicar(5, 4);
+console.log("(10 x 2) + (5 x 4) =", total);
+
+// Função com lógica e return
+function verificarMaioridade(idade) {
+    if (idade >= 18) {
+        return "Maior de idade";
+    } else {
+        return "Menor de idade";
+    }
+}
+
+console.log("\n=== FUNÇÃO COM LÓGICA ===");
+console.log("Idade 20:", verificarMaioridade(20));
+console.log("Idade 15:", verificarMaioridade(15));
+
+// Calculadora com funções
+function calcular(operacao, num1, num2) {
+    if (operacao === "+") {
+        return num1 + num2;
+    } else if (operacao === "-") {
+        return num1 - num2;
+    } else if (operacao === "*") {
+        return num1 * num2;
+    } else if (operacao === "/") {
+        return num1 / num2;
+    } else {
+        return "Operação inválida";
+    }
+}
+
+console.log("\n=== CALCULADORA ===");
+console.log("10 + 5 =", calcular("+", 10, 5));
+console.log("10 - 5 =", calcular("-", 10, 5));
+console.log("10 * 5 =", calcular("*", 10, 5));
+console.log("10 / 5 =", calcular("/", 10, 5));
+</pre>
+        </div>
+
+        <p>Quando uma função tem return, ela para de executar imediatamente ao encontrar o return e devolve o valor especificado. Qualquer código depois do return não será executado. Funções sem return automaticamente retornam undefined. Pense no return como a resposta que a função dá de volta para quem a chamou - é como perguntar algo para alguém e receber uma resposta específica que você pode usar depois.</p>
+
+        <a href="../index.html" class="back-link">← Voltar para o Índice</a>
+    </div>
+
+    <script>
+        function saudar(nome) {
+            console.log(`Olá, ${nome}!`);
+        }
+
+        console.log("=== FUNÇÃO COM PARÂMETRO ===");
+        saudar("Maria");
+        saudar("João");
+        saudar("Ana");
+
+        function somar(a, b) {
+            let resultado = a + b;
+            console.log(`${a} + ${b} = ${resultado}`);
+        }
+
+        console.log("\n=== MÚLTIPLOS PARÂMETROS ===");
+        somar(5, 3);
+        somar(10, 20);
+
+        function multiplicar(x, y) {
+            return x * y;
+        }
+
+        console.log("\n=== FUNÇÃO COM RETURN ===");
+        let resultado1 = multiplicar(4, 5);
+        console.log("4 x 5 =", resultado1);
+
+        let resultado2 = multiplicar(3, 7);
+        console.log("3 x 7 =", resultado2);
+
+        console.log("\n=== USANDO RETURN ===");
+        let total = multiplicar(10, 2) + multiplicar(5, 4);
+        console.log("(10 x 2) + (5 x 4) =", total);
+
+        function verificarMaioridade(idade) {
+            if (idade >= 18) {
+                return "Maior de idade";
+            } else {
+                return "Menor de idade";
+            }
+        }
+
+        console.log("\n=== FUNÇÃO COM LÓGICA ===");
+        console.log("Idade 20:", verificarMaioridade(20));
+        console.log("Idade 15:", verificarMaioridade(15));
+
+        function calcular(operacao, num1, num2) {
+            if (operacao === "+") return num1 + num2;
+            if (operacao === "-") return num1 - num2;
+            if (operacao === "*") return num1 * num2;
+            if (operacao === "/") return num1 / num2;
+            return "Operação inválida";
+        }
+
+        console.log("\n=== CALCULADORA ===");
+        console.log("10 + 5 =", calcular("+", 10, 5));
+        console.log("10 - 5 =", calcular("-", 10, 5));
+        console.log("10 * 5 =", calcular("*", 10, 5));
+        console.log("10 / 5 =", calcular("/", 10, 5));
+    </script>
+</body>
+</html>

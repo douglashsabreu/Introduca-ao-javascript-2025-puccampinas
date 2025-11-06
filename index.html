@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript do Zero ao To-Do List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #764ba2;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .link-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .link-card h3 {
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .link-card p {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .projeto-final {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .projeto-final h2 {
+            color: white;
+            border: none;
+            margin-bottom: 15px;
+        }
+
+        .projeto-final a {
+            display: inline-block;
+            background: white;
+            color: #f5576c;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 15px;
+            transition: transform 0.3s;
+        }
+
+        .projeto-final a:hover {
+            transform: scale(1.05);
+        }
+
+        .info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+
+        .info h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Introdução a Tecnologias para Web - Puc Campinas </h1>
+        <h1>📚 JavaScript - Introdução</h1>
+        <h1>Prof. Douglas H. S. Abreu</h1>
+
+        <div class="info">
+            <h3>💡 Como usar este material:</h3>
+            <p>1. Abra o <strong>Console do navegador</strong> (pressione F12 e vá até a aba Console)</p>
+            <p>2. Clique em qualquer exemplo abaixo para vê-lo em ação</p>
+            <p>3. Modifique o código e recarregue a página para experimentar</p>
+            <p>4. Siga a ordem para melhor compreensão dos conceitos</p>
+        </div>
+
+        <!-- Bloco 1: Fundamentos -->
+        <div class="section">
+            <h2>🎯 Bloco 1: Fundamentos</h2>
+            <div class="links">
+                <a href="01-fundamentos/01-hello-world.html" class="link-card">
+                    <h3>01. Hello World</h3>
+                    <p>Seu primeiro código JavaScript</p>
+                </a>
+                <a href="01-fundamentos/02-variaveis.html" class="link-card">
+                    <h3>02. Variáveis</h3>
+                    <p>let, const e tipos de dados</p>
+                </a>
+                <a href="01-fundamentos/03-tipos-dados.html" class="link-card">
+                    <h3>03. Tipos de Dados</h3>
+                    <p>String, Number, Boolean, etc</p>
+                </a>
+                <a href="01-fundamentos/04-operadores.html" class="link-card">
+                    <h3>04. Operadores</h3>
+                    <p>Matemáticos e de comparação</p>
+                </a>
+                <a href="01-fundamentos/05-strings.html" class="link-card">
+                    <h3>05. Strings</h3>
+                    <p>Concatenação e template strings</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bloco 2: Controle de Fluxo -->
+        <div class="section">
+            <h2>🔀 Bloco 2: Controle de Fluxo</h2>
+            <div class="links">
+                <a href="02-controle-fluxo/01-condicionais.html" class="link-card">
+                    <h3>01. Condicionais</h3>
+                    <p>if, else if, else</p>
+                </a>
+                <a href="02-controle-fluxo/02-operadores-logicos.html" class="link-card">
+                    <h3>02. Operadores Lógicos</h3>
+                    <p>&&, ||, ! (AND, OR, NOT)</p>
+                </a>
+                <a href="02-controle-fluxo/03-switch.html" class="link-card">
+                    <h3>03. Switch</h3>
+                    <p>Múltiplas condições</p>
+                </a>
+                <a href="02-controle-fluxo/04-loops.html" class="link-card">
+                    <h3>04. Loops</h3>
+                    <p>for, while, forEach</p>
+                </a>
+                <a href="02-controle-fluxo/05-break-continue.html" class="link-card">
+                    <h3>05. Break e Continue</h3>
+                    <p>Controlando loops</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bloco 3: Funções -->
+        <div class="section">
+            <h2>⚡ Bloco 3: Funções</h2>
+            <div class="links">
+                <a href="03-funcoes/01-funcoes-basicas.html" class="link-card">
+                    <h3>01. Funções Básicas</h3>
+                    <p>Declarando e chamando funções</p>
+                </a>
+                <a href="03-funcoes/02-parametros-return.html" class="link-card">
+                    <h3>02. Parâmetros e Return</h3>
+                    <p>Passando dados e retornando valores</p>
+                </a>
+                <a href="03-funcoes/03-arrow-functions.html" class="link-card">
+                    <h3>03. Arrow Functions</h3>
+                    <p>Sintaxe moderna e concisa</p>
+                </a>
+                <a href="03-funcoes/04-escopo.html" class="link-card">
+                    <h3>04. Escopo</h3>
+                    <p>Onde as variáveis existem</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bloco 4: Arrays e Objetos -->
+        <div class="section">
+            <h2>📦 Bloco 4: Arrays e Objetos</h2>
+            <div class="links">
+                <a href="04-arrays-objetos/01-arrays.html" class="link-card">
+                    <h3>01. Arrays</h3>
+                    <p>Listas de valores</p>
+                </a>
+                <a href="04-arrays-objetos/02-metodos-arrays.html" class="link-card">
+                    <h3>02. Métodos de Arrays</h3>
+                    <p>push, pop, shift, unshift</p>
+                </a>
+                <a href="04-arrays-objetos/03-map-filter.html" class="link-card">
+                    <h3>03. Map e Filter</h3>
+                    <p>Transformando e filtrando arrays</p>
+                </a>
+                <a href="04-arrays-objetos/04-objetos.html" class="link-card">
+                    <h3>04. Objetos</h3>
+                    <p>Estruturas de dados complexas</p>
+                </a>
+                <a href="04-arrays-objetos/05-arrays-objetos.html" class="link-card">
+                    <h3>05. Arrays de Objetos</h3>
+                    <p>Combinando estruturas</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bloco 5: DOM -->
+        <div class="section">
+            <h2>🌐 Bloco 5: DOM e Interatividade</h2>
+            <div class="links">
+                <a href="05-dom/01-selecionar-elementos.html" class="link-card">
+                    <h3>01. Selecionar Elementos</h3>
+                    <p>querySelector e getElementById</p>
+                </a>
+                <a href="05-dom/02-manipular-conteudo.html" class="link-card">
+                    <h3>02. Manipular Conteúdo</h3>
+                    <p>Alterando texto e HTML</p>
+                </a>
+                <a href="05-dom/03-eventos.html" class="link-card">
+                    <h3>03. Eventos</h3>
+                    <p>Respondendo a ações do usuário</p>
+                </a>
+                <a href="05-dom/04-inputs.html" class="link-card">
+                    <h3>04. Capturando Inputs</h3>
+                    <p>Lendo valores de formulários</p>
+                </a>
+                <a href="05-dom/05-localstorage.html" class="link-card">
+                    <h3>05. LocalStorage</h3>
+                    <p>Salvando dados no navegador</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Projeto Final -->
+        <div class="projeto-final">
+            <h2>🎉 Projeto Final: To-Do List Completo</h2>
+            <p style="color: white; margin-bottom: 10px;">
+                Aplicando todos os conceitos em um projeto real e funcional!
+            </p>
+            <a href="06-projeto-final/todo-list.html">
+                🚀 Abrir To-Do List
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

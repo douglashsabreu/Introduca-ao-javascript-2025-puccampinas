@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionais - JavaScript</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .code-block { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; margin: 20px 0; overflow-x: auto; font-family: 'Courier New', monospace; }
+        .back-link { display: inline-block; background: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+        .back-link:hover { background: #764ba2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Condicionais - Tomando Decisões</h1>
+        
+        <p>Condicionais permitem que o programa tome decisões e execute diferentes blocos de código baseado em condições. É como se o programa fizesse perguntas e agisse de acordo com as respostas. A estrutura mais básica é o if-else, que funciona como: "se esta condição for verdadeira, faça isso; caso contrário, faça aquilo".</p>
+
+        <h2>📝 Código:</h2>
+        <div class="code-block">
+<pre>// If simples
+let idade = 18;
+
+console.log("=== IF SIMPLES ===");
+if (idade >= 18) {
+    console.log("Você é maior de idade");
+}
+
+// If-Else
+idade = 15;
+console.log("\n=== IF-ELSE ===");
+console.log("Idade:", idade);
+if (idade >= 18) {
+    console.log("Você é maior de idade");
+} else {
+    console.log("Você é menor de idade");
+}
+
+// If-Else If-Else (múltiplas condições)
+let nota = 85;
+
+console.log("\n=== IF-ELSE IF-ELSE ===");
+console.log("Nota:", nota);
+
+if (nota >= 90) {
+    console.log("Conceito: A - Excelente!");
+} else if (nota >= 80) {
+    console.log("Conceito: B - Muito bom!");
+} else if (nota >= 70) {
+    console.log("Conceito: C - Bom");
+} else if (nota >= 60) {
+    console.log("Conceito: D - Regular");
+} else {
+    console.log("Conceito: F - Reprovado");
+}
+
+// Exemplo prático: calculadora de IMC
+let peso = 70;  // kg
+let altura = 1.75;  // metros
+let imc = peso / (altura * altura);
+
+console.log("\n=== EXEMPLO: CALCULADORA DE IMC ===");
+console.log("Peso:", peso, "kg");
+console.log("Altura:", altura, "m");
+console.log("IMC:", imc.toFixed(2));
+
+if (imc < 18.5) {
+    console.log("Classificação: Abaixo do peso");
+} else if (imc < 25) {
+    console.log("Classificação: Peso normal");
+} else if (imc < 30) {
+    console.log("Classificação: Sobrepeso");
+} else {
+    console.log("Classificação: Obesidade");
+}
+
+// Condicionais aninhadas
+let temperatura = 28;
+let chovendo = false;
+
+console.log("\n=== CONDICIONAIS ANINHADAS ===");
+console.log("Temperatura:", temperatura, "°C");
+console.log("Está chovendo?", chovendo);
+
+if (temperatura > 25) {
+    console.log("Está calor!");
+    if (chovendo) {
+        console.log("Leve um guarda-chuva");
+    } else {
+        console.log("Dia perfeito para a praia!");
+    }
+} else {
+    console.log("Está frio, leve um casaco");
+}</pre>
+        </div>
+
+        <h2>🎯 Como funciona:</h2>
+        <p>O JavaScript avalia as condições de cima para baixo e executa apenas o primeiro bloco cuja condição seja verdadeira. Depois disso, ele pula todos os outros blocos else if e else, mesmo que suas condições também sejam verdadeiras. Isso é importante: apenas um caminho será executado.</p>
+
+        <p>Condições aninhadas (if dentro de if) permitem verificações mais complexas, mas use com moderação. Quando houver muitas condições aninhadas, o código pode ficar difícil de ler e manter. Nesses casos, considere refatorar usando funções ou outras estruturas.</p>
+
+        <a href="../index.html" class="back-link">← Voltar para o Índice</a>
+    </div>
+
+    <script>
+        // If simples
+        let idade = 18;
+
+        console.log("=== IF SIMPLES ===");
+        if (idade >= 18) {
+            console.log("Você é maior de idade");
+        }
+
+        // If-Else
+        idade = 15;
+        console.log("\n=== IF-ELSE ===");
+        console.log("Idade:", idade);
+        if (idade >= 18) {
+            console.log("Você é maior de idade");
+        } else {
+            console.log("Você é menor de idade");
+        }
+
+        // If-Else If-Else
+        let nota = 85;
+
+        console.log("\n=== IF-ELSE IF-ELSE ===");
+        console.log("Nota:", nota);
+
+        if (nota >= 90) {
+            console.log("Conceito: A - Excelente!");
+        } else if (nota >= 80) {
+            console.log("Conceito: B - Muito bom!");
+        } else if (nota >= 70) {
+            console.log("Conceito: C - Bom");
+        } else if (nota >= 60) {
+            console.log("Conceito: D - Regular");
+        } else {
+            console.log("Conceito: F - Reprovado");
+        }
+
+        // Exemplo prático: calculadora de IMC
+        let peso = 70;
+        let altura = 1.75;
+        let imc = peso / (altura * altura);
+
+        console.log("\n=== EXEMPLO: CALCULADORA DE IMC ===");
+        console.log("Peso:", peso, "kg");
+        console.log("Altura:", altura, "m");
+        console.log("IMC:", imc.toFixed(2));
+
+        if (imc < 18.5) {
+            console.log("Classificação: Abaixo do peso");
+        } else if (imc < 25) {
+            console.log("Classificação: Peso normal");
+        } else if (imc < 30) {
+            console.log("Classificação: Sobrepeso");
+        } else {
+            console.log("Classificação: Obesidade");
+        }
+
+        // Condicionais aninhadas
+        let temperatura = 28;
+        let chovendo = false;
+
+        console.log("\n=== CONDICIONAIS ANINHADAS ===");
+        console.log("Temperatura:", temperatura, "°C");
+        console.log("Está chovendo?", chovendo);
+
+        if (temperatura > 25) {
+            console.log("Está calor!");
+            if (chovendo) {
+                console.log("Leve um guarda-chuva");
+            } else {
+                console.log("Dia perfeito para a praia!");
+            }
+        } else {
+            console.log("Está frio, leve um casaco");
+        }
+
+        console.log("\n✅ Abra o Console (F12) para ver todos os exemplos!");
+    </script>
+</body>
+</html>

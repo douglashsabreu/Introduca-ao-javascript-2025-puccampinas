@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulando Conteúdo</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        input { padding: 10px; margin: 10px 5px; font-size: 16px; }
+        button { padding: 10px 20px; margin: 5px; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #764ba2; }
+        #resultado { margin-top: 20px; padding: 15px; background: #f0f0f0; border-radius: 5px; }
+        .code-block { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; margin: 20px 0; overflow-x: auto; }
+        .back-link { display: inline-block; background: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exemplo: Manipulando Conteúdo</h1>
+        <p>Abra o Console (F12) para ver os logs!</p>
+        <div class="code-block"><pre>document.body.innerHTML = '<h1 id="titulo">Título Original</h1><button id="btn">Clique aqui</button>';
+
+let titulo = document.getElementById("titulo");
+
+console.log("Texto original:", titulo.textContent);
+
+titulo.textContent = "Novo Título!";
+console.log("Texto alterado:", titulo.textContent);
+
+titulo.style.color = "blue";
+titulo.style.fontSize = "32px";
+
+titulo.classList.add("destaque");
+console.log("Classes:", titulo.classList);</pre></div>
+        <a href="../index.html" class="back-link">← Voltar para o Índice</a>
+    </div>
+    <script>
+document.body.innerHTML = '<h1 id="titulo">Título Original</h1><button id="btn">Clique aqui</button>';
+
+let titulo = document.getElementById("titulo");
+
+console.log("Texto original:", titulo.textContent);
+
+titulo.textContent = "Novo Título!";
+console.log("Texto alterado:", titulo.textContent);
+
+titulo.style.color = "blue";
+titulo.style.fontSize = "32px";
+
+titulo.classList.add("destaque");
+console.log("Classes:", titulo.classList);
+    </script>
+</body>
+</html>

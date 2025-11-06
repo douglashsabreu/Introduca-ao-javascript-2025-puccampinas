@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📝 To-Do List - Projeto Final JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="header">
+            <h1>📝 Minha Lista de Tarefas</h1>
+            <p class="subtitle">Organize seu dia com eficiência!</p>
+        </header>
+
+        <!-- Área de input -->
+        <div class="input-section">
+            <input 
+                type="text" 
+                id="taskInput" 
+                placeholder="Digite uma nova tarefa..."
+                maxlength="100"
+            >
+            <button id="addBtn" class="btn-add">
+                <span>➕</span> Adicionar
+            </button>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">
+                Todas <span class="count" id="countAll">0</span>
+            </button>
+            <button class="filter-btn" data-filter="active">
+                Ativas <span class="count" id="countActive">0</span>
+            </button>
+            <button class="filter-btn" data-filter="completed">
+                Completas <span class="count" id="countCompleted">0</span>
+            </button>
+        </div>
+
+        <!-- Lista de tarefas -->
+        <ul id="taskList" class="task-list">
+            <!-- Tarefas serão adicionadas dinamicamente aqui -->
+        </ul>
+
+        <!-- Mensagem quando lista vazia -->
+        <div id="emptyMessage" class="empty-message">
+            <span class="emoji">✨</span>
+            <p>Nenhuma tarefa ainda!</p>
+            <p class="small">Adicione sua primeira tarefa acima</p>
+        </div>
+
+        <!-- Botão de limpar completas -->
+        <div class="footer-actions">
+            <button id="clearCompletedBtn" class="btn-clear">
+                🗑️ Limpar Completas
+            </button>
+        </div>
+    </div>
+
+    <!-- Link para voltar -->
+    <div class="back-link-container">
+        <a href="../index.html" class="back-link">← Voltar para o Índice</a>
+    </div>
+
+    <!-- Info sobre o projeto -->
+    <div class="project-info">
+        <h3>🎯 Conceitos Aplicados Neste Projeto:</h3>
+        <p>Este To-Do List demonstra na prática todos os conceitos aprendidos ao longo da aula. Aqui você encontra variáveis e constantes organizando o estado da aplicação, funções estruturando a lógica de forma modular, arrays armazenando as tarefas, objetos representando cada tarefa com suas propriedades, manipulação do DOM criando e modificando elementos dinamicamente, eventos respondendo às ações do usuário, e localStorage garantindo que suas tarefas persistam mesmo após fechar o navegador. É a união perfeita de tudo que estudamos, transformada em uma aplicação real e útil!</p>
+        
+        <p class="highlight">💡 Abra o Console (F12) para ver os logs e entender o que acontece nos bastidores!</p>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

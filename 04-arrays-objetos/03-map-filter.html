@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Map e Filter</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .code-block { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; margin: 20px 0; overflow-x: auto; }
+        .back-link { display: inline-block; background: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Map e Filter</h1>
+        <div class="code-block"><pre>let numeros = [1, 2, 3, 4, 5];
+
+console.log("Array original:", numeros);
+
+let dobrados = numeros.map(n => n * 2);
+console.log("Dobrados:", dobrados);
+
+let pares = numeros.filter(n => n % 2 === 0);
+console.log("Apenas pares:", pares);
+
+let maiores = numeros.filter(n => n > 2);
+console.log("Maiores que 2:", maiores);</pre></div>
+        <a href="../index.html" class="back-link">← Voltar para o Índice</a>
+    </div>
+    <script>
+let numeros = [1, 2, 3, 4, 5];
+
+console.log("Array original:", numeros);
+
+let dobrados = numeros.map(n => n * 2);
+console.log("Dobrados:", dobrados);
+
+let pares = numeros.filter(n => n % 2 === 0);
+console.log("Apenas pares:", pares);
+
+let maiores = numeros.filter(n => n > 2);
+console.log("Maiores que 2:", maiores);
+    </script>
+</body>
+</html>

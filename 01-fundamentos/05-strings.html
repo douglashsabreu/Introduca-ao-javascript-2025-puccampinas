@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05. Strings - JavaScript</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .code-block { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; margin: 20px 0; overflow-x: auto; font-family: 'Courier New', monospace; }
+        .back-link { display: inline-block; background: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+        .back-link:hover { background: #764ba2; }
+        .tip { background: #e8f5e9; padding: 15px; border-radius: 8px; border-left: 4px solid #4caf50; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>05. Strings - Trabalhando com Texto</h1>
+        
+        <p>Strings são sequências de caracteres usadas para representar texto. Em JavaScript, podemos criar strings de três formas: com aspas duplas (<code>"texto"</code>), aspas simples (<code>'texto'</code>) ou template literals (<code>`texto`</code>). As template literals são a forma mais moderna e poderosa, permitindo incorporar variáveis e expressões diretamente no texto.</p>
+
+        <h2>💡 Concatenação vs Template Literals</h2>
+        <p><strong>Concatenação (forma antiga):</strong> Juntar strings usando o operador <code>+</code>. Funciona, mas fica confuso e difícil de ler quando temos muitas variáveis.</p>
+        
+        <p><strong>Template Literals (forma moderna):</strong> Use crases (<code>`</code>) e insira variáveis com <code>${}</code>. Muito mais legível e fácil de manter!</p>
+
+        <div class="tip">
+            <strong>✨ Sempre prefira template literals!</strong><br>
+            Eles tornam o código mais limpo, legível e menos propenso a erros. Além disso, permitem quebras de linha naturais e expressões JavaScript dentro do texto.
+        </div>
+
+        <h2>📝 Código:</h2>
+        <div class="code-block">
+<pre>// Criando strings de diferentes formas
+let nome = "Ana";
+let sobrenome = 'Silva';
+let saudacao = `Olá, mundo!`;
+
+console.log("=== CRIANDO STRINGS ===");
+console.log(nome);
+console.log(sobrenome);
+console.log(saudacao);
+
+// Concatenação (forma antiga - evite!)
+let idade = 25;
+let cidade = "São Paulo";
+
+let fraseAntiga = "Olá, " + nome + "! Você tem " + idade + " anos.";
+console.log("\n=== CONCATENAÇÃO (antiga) ===");
+console.log(fraseAntiga);
+
+// Template Literals (forma moderna - use esta!)
+let fraseModerna = `Olá, ${nome}! Você tem ${idade} anos.`;
+console.log("\n=== TEMPLATE LITERALS (moderna) ===");
+console.log(fraseModerna);
+
+// Expressões dentro de template literals
+let preco = 50;
+let quantidade = 3;
+let mensagem = `Total: R$ ${preco * quantidade}`;
+console.log("\n=== EXPRESSÕES ===");
+console.log(mensagem);
+
+// Strings multi-linha
+let poema = `
+  Rosas são vermelhas,
+  Violetas são azuis,
+  JavaScript é incrível,
+  E você também!
+`;
+console.log("\n=== MULTI-LINHA ===");
+console.log(poema);
+
+// Métodos úteis de string
+let frase = "  JavaScript é poderoso  ";
+
+console.log("\n=== MÉTODOS DE STRING ===");
+console.log("Original:", `'${frase}'`);
+console.log("length:", frase.length);  // tamanho
+console.log("trim():", `'${frase.trim()}'`);  // remove espaços
+console.log("toUpperCase():", frase.toUpperCase());  // MAIÚSCULAS
+console.log("toLowerCase():", frase.toLowerCase());  // minúsculas
+console.log("includes('Java'):", frase.includes("Java"));  // true
+console.log("replace('JavaScript', 'Python'):", frase.replace("JavaScript", "Python"));
+
+// Acessando caracteres
+let palavra = "JavaScript";
+console.log("\n=== ACESSANDO CARACTERES ===");
+console.log("Primeira letra:", palavra[0]);  // J
+console.log("Última letra:", palavra[palavra.length - 1]);  // t
+console.log("Substring:", palavra.substring(0, 4));  // Java</pre>
+        </div>
+
+        <h2>🎯 Métodos Úteis de String:</h2>
+        <p><strong>.length</strong> - Retorna o número de caracteres na string</p>
+        <p><strong>.trim()</strong> - Remove espaços em branco do início e fim</p>
+        <p><strong>.toUpperCase()</strong> / <strong>.toLowerCase()</strong> - Converte para maiúsculas/minúsculas</p>
+        <p><strong>.includes(texto)</strong> - Verifica se contém determinado texto (retorna true/false)</p>
+        <p><strong>.replace(antigo, novo)</strong> - Substitui texto</p>
+        <p><strong>.substring(inicio, fim)</strong> - Extrai parte da string</p>
+        <p><strong>.split(separador)</strong> - Divide a string em um array</p>
+
+        <p>Strings em JavaScript são imutáveis, o que significa que os métodos nunca modificam a string original - eles sempre retornam uma nova string. Isso é importante para evitar efeitos colaterais inesperados no seu código.</p>
+
+        <a href="../index.html" class="back-link">← Voltar para o Índice</a>
+    </div>
+
+    <script>
+        // Criando strings de diferentes formas
+        let nome = "Ana";
+        let sobrenome = 'Silva';
+        let saudacao = `Olá, mundo!`;
+
+        console.log("=== CRIANDO STRINGS ===");
+        console.log(nome);
+        console.log(sobrenome);
+        console.log(saudacao);
+
+        // Concatenação (forma antiga - evite!)
+        let idade = 25;
+        let cidade = "São Paulo";
+
+        let fraseAntiga = "Olá, " + nome + "! Você tem " + idade + " anos.";
+        console.log("\n=== CONCATENAÇÃO (antiga) ===");
+        console.log(fraseAntiga);
+
+        // Template Literals (forma moderna - use esta!)
+        let fraseModerna = `Olá, ${nome}! Você tem ${idade} anos.`;
+        console.log("\n=== TEMPLATE LITERALS (moderna) ===");
+        console.log(fraseModerna);
+
+        // Expressões dentro de template literals
+        let preco = 50;
+        let quantidade = 3;
+        let mensagem = `Total: R$ ${preco * quantidade}`;
+        console.log("\n=== EXPRESSÕES ===");
+        console.log(mensagem);
+
+        // Strings multi-linha
+        let poema = `
+  Rosas são vermelhas,
+  Violetas são azuis,
+  JavaScript é incrível,
+  E você também!
+`;
+        console.log("\n=== MULTI-LINHA ===");
+        console.log(poema);
+
+        // Métodos úteis de string
+        let frase = "  JavaScript é poderoso  ";
+
+        console.log("\n=== MÉTODOS DE STRING ===");
+        console.log("Original:", `'${frase}'`);
+        console.log("length:", frase.length);
+        console.log("trim():", `'${frase.trim()}'`);
+        console.log("toUpperCase():", frase.toUpperCase());
+        console.log("toLowerCase():", frase.toLowerCase());
+        console.log("includes('Java'):", frase.includes("Java"));
+        console.log("replace('JavaScript', 'Python'):", frase.replace("JavaScript", "Python"));
+
+        // Acessando caracteres
+        let palavra = "JavaScript";
+        console.log("\n=== ACESSANDO CARACTERES ===");
+        console.log("Primeira letra:", palavra[0]);
+        console.log("Última letra:", palavra[palavra.length - 1]);
+        console.log("Substring:", palavra.substring(0, 4));
+
+        console.log("\n✅ Abra o Console (F12) para ver todos os exemplos!");
+    </script>
+</body>
+</html>

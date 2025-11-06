@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch - JavaScript</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .code-block { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; margin: 20px 0; overflow-x: auto; }
+        .back-link { display: inline-block; background: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Switch - Múltiplas Opções</h1>
+        
+        <p>O switch é usado quando temos uma variável e queremos compará-la com múltiplos valores possíveis. É mais limpo que vários if-else quando temos muitas opções. O break é essencial para sair do switch após encontrar o caso correto, caso contrário, o código continuará executando os próximos casos (comportamento chamado de "fall-through").</p>
+
+        <h2>📝 Código:</h2>
+        <div class="code-block">
+<pre>// Exemplo básico com dias da semana
+let dia = 3;
+
+console.log("=== SWITCH BÁSICO ===");
+console.log("Dia:", dia);
+
+switch (dia) {
+    case 1:
+        console.log("Segunda-feira");
+        break;
+    case 2:
+        console.log("Terça-feira");
+        break;
+    case 3:
+        console.log("Quarta-feira");
+        break;
+    case 4:
+        console.log("Quinta-feira");
+        break;
+    case 5:
+        console.log("Sexta-feira");
+        break;
+    case 6:
+        console.log("Sábado");
+        break;
+    case 7:
+        console.log("Domingo");
+        break;
+    default:
+        console.log("Dia inválido");
+}
+
+// Switch com strings
+let fruta = "maçã";
+
+console.log("\n=== SWITCH COM STRINGS ===");
+console.log("Fruta:", fruta);
+
+switch (fruta) {
+    case "maçã":
+        console.log("Maçãs custam R$ 3/kg");
+        break;
+    case "banana":
+        console.log("Bananas custam R$ 2/kg");
+        break;
+    case "laranja":
+        console.log("Laranjas custam R$ 2.50/kg");
+        break;
+    default:
+        console.log("Fruta não encontrada");
+}
+
+// Casos múltiplos (fall-through intencional)
+let mes = 7;
+
+console.log("\n=== CASOS MÚLTIPLOS ===");
+console.log("Mês:", mes);
+
+switch (mes) {
+    case 12:
+    case 1:
+    case 2:
+        console.log("Estação: Verão");
+        break;
+    case 3:
+    case 4:
+    case 5:
+        console.log("Estação: Outono");
+        break;
+    case 6:
+    case 7:
+    case 8:
+        console.log("Estação: Inverno");
+        break;
+    case 9:
+    case 10:
+    case 11:
+        console.log("Estação: Primavera");
+        break;
+    default:
+        console.log("Mês inválido");
+}
+
+// Exemplo prático: calculadora
+let operacao = "+";
+let a = 10;
+let b = 5;
+
+console.log("\n=== CALCULADORA ===");
+console.log(`${a} ${operacao} ${b} = ?`);
+
+switch (operacao) {
+    case "+":
+        console.log("Resultado:", a + b);
+        break;
+    case "-":
+        console.log("Resultado:", a - b);
+        break;
+    case "*":
+        console.log("Resultado:", a * b);
+        break;
+    case "/":
+        console.log("Resultado:", a / b);
+        break;
+    default:
+        console.log("Operação inválida");
+}
+</pre>
+        </div>
+
+        <p><strong>💡 Dica:</strong> O switch compara valores usando === (igual estrito), então "5" não é igual a 5. Se você tiver muitas condições complexas, às vezes if-else é mais apropriado. Use switch quando estiver comparando uma variável contra valores específicos.</p>
+
+        <a href="../index.html" class="back-link">← Voltar para o Índice</a>
+    </div>
+
+    <script>
+        let dia = 3;
+
+        console.log("=== SWITCH BÁSICO ===");
+        console.log("Dia:", dia);
+
+        switch (dia) {
+            case 1: console.log("Segunda-feira"); break;
+            case 2: console.log("Terça-feira"); break;
+            case 3: console.log("Quarta-feira"); break;
+            case 4: console.log("Quinta-feira"); break;
+            case 5: console.log("Sexta-feira"); break;
+            case 6: console.log("Sábado"); break;
+            case 7: console.log("Domingo"); break;
+            default: console.log("Dia inválido");
+        }
+
+        let fruta = "maçã";
+        console.log("\n=== SWITCH COM STRINGS ===");
+        console.log("Fruta:", fruta);
+
+        switch (fruta) {
+            case "maçã": console.log("Maçãs custam R$ 3/kg"); break;
+            case "banana": console.log("Bananas custam R$ 2/kg"); break;
+            case "laranja": console.log("Laranjas custam R$ 2.50/kg"); break;
+            default: console.log("Fruta não encontrada");
+        }
+
+        let mes = 7;
+        console.log("\n=== CASOS MÚLTIPLOS ===");
+        console.log("Mês:", mes);
+
+        switch (mes) {
+            case 12: case 1: case 2: console.log("Estação: Verão"); break;
+            case 3: case 4: case 5: console.log("Estação: Outono"); break;
+            case 6: case 7: case 8: console.log("Estação: Inverno"); break;
+            case 9: case 10: case 11: console.log("Estação: Primavera"); break;
+            default: console.log("Mês inválido");
+        }
+
+        let operacao = "+";
+        let a = 10, b = 5;
+        console.log("\n=== CALCULADORA ===");
+        console.log(`${a} ${operacao} ${b} = ?`);
+
+        switch (operacao) {
+            case "+": console.log("Resultado:", a + b); break;
+            case "-": console.log("Resultado:", a - b); break;
+            case "*": console.log("Resultado:", a * b); break;
+            case "/": console.log("Resultado:", a / b); break;
+            default: console.log("Operação inválida");
+        }
+    </script>
+</body>
+</html>

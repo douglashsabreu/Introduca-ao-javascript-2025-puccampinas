@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Escopo - JavaScript</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .code-block { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; margin: 20px 0; overflow-x: auto; }
+        .back-link { display: inline-block; background: #667eea; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Escopo - Onde as Variáveis Vivem</h1>
+        
+        <p>Escopo determina onde uma variável pode ser acessada no código. Variáveis declaradas dentro de uma função existem apenas dentro dessa função (escopo local), enquanto variáveis declaradas fora de qualquer função podem ser acessadas de qualquer lugar (escopo global). Entender escopo é crucial para evitar conflitos de nomes e bugs sutis no seu código.</p>
+
+        <h2>📝 Código:</h2>
+        <div class="code-block">
+<pre>// Escopo global - acessível em qualquer lugar
+let mensagemGlobal = "Variável global";
+
+console.log("=== ESCOPO GLOBAL ===");
+console.log(mensagemGlobal);  // Funciona
+
+function testarGlobal() {
+    console.log(mensagemGlobal);  // Também funciona dentro da função
+}
+
+testarGlobal();
+
+// Escopo local - existe apenas dentro da função
+function minhaFuncao() {
+    let mensagemLocal = "Variável local";
+    console.log(mensagemLocal);  // Funciona aqui
+}
+
+console.log("\n=== ESCOPO LOCAL ===");
+minhaFuncao();
+// console.log(mensagemLocal);  // ERRO! Não existe fora da função
+
+// Exemplo prático
+let contador = 0;  // global
+
+function incrementar() {
+    let mensagem = "Incrementando...";  // local
+    contador++;  // acessa global
+    console.log(mensagem);  // acessa local
+}
+
+console.log("\n=== EXEMPLO PRÁTICO ===");
+console.log("Contador inicial:", contador);
+incrementar();
+console.log("Contador final:", contador);
+
+// Mesmos nomes em escopos diferentes
+let nome = "João";  // global
+
+function apresentar() {
+    let nome = "Maria";  // local, diferente da global
+    console.log("Dentro da função:", nome);  // Maria
+}
+
+console.log("\n=== MESMOS NOMES ===");
+console.log("Fora da função:", nome);  // João
+apresentar();
+console.log("Depois da função:", nome);  // Ainda João
+
+// Escopo de bloco (let e const)
+console.log("\n=== ESCOPO DE BLOCO ===");
+let fora = "Fora do if";
+
+if (true) {
+    let dentro = "Dentro do if";
+    console.log(fora);   // Acessa externa
+    console.log(dentro); // Acessa local
+}
+
+console.log(fora);  // Funciona
+// console.log(dentro);  // ERRO! Só existe dentro do if
+
+// Exemplo: loop com escopo
+console.log("\n=== ESCOPO EM LOOPS ===");
+for (let i = 0; i < 3; i++) {
+    console.log(`Valor de i: ${i}`);
+}
+// console.log(i);  // ERRO! i só existe dentro do for
+</pre>
+        </div>
+
+        <p>Pense no escopo como "privacidade" de variáveis. Variáveis locais são privadas para a função onde foram criadas - é como ter uma conversa privada em um quarto fechado. Variáveis globais são públicas - como gritar em uma praça pública onde todos podem ouvir. Use variáveis locais sempre que possível para evitar conflitos. O escopo ajuda a organizar o código e evita que diferentes partes do programa interfiram umas com as outras acidentalmente.</p>
+
+        <a href="../index.html" class="back-link">← Voltar para o Índice</a>
+    </div>
+
+    <script>
+        let mensagemGlobal = "Variável global";
+
+        console.log("=== ESCOPO GLOBAL ===");
+        console.log(mensagemGlobal);
+
+        function testarGlobal() {
+            console.log(mensagemGlobal);
+        }
+
+        testarGlobal();
+
+        function minhaFuncao() {
+            let mensagemLocal = "Variável local";
+            console.log(mensagemLocal);
+        }
+
+        console.log("\n=== ESCOPO LOCAL ===");
+        minhaFuncao();
+
+        let contador = 0;
+
+        function incrementar() {
+            let mensagem = "Incrementando...";
+            contador++;
+            console.log(mensagem);
+        }
+
+        console.log("\n=== EXEMPLO PRÁTICO ===");
+        console.log("Contador inicial:", contador);
+        incrementar();
+        console.log("Contador final:", contador);
+
+        let nome = "João";
+
+        function apresentar() {
+            let nome = "Maria";
+            console.log("Dentro da função:", nome);
+        }
+
+        console.log("\n=== MESMOS NOMES ===");
+        console.log("Fora da função:", nome);
+        apresentar();
+        console.log("Depois da função:", nome);
+
+        console.log("\n=== ESCOPO DE BLOCO ===");
+        let fora = "Fora do if";
+
+        if (true) {
+            let dentro = "Dentro do if";
+            console.log(fora);
+            console.log(dentro);
+        }
+
+        console.log(fora);
+
+        console.log("\n=== ESCOPO EM LOOPS ===");
+        for (let i = 0; i < 3; i++) {
+            console.log(`Valor de i: ${i}`);
+        }
+    </script>
+</body>
+</html>
