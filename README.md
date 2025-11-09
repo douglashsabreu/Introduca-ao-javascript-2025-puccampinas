@@ -57,6 +57,20 @@ javascript-aula/
 3. **Navegue pelos exemplos** usando os links organizados por tópico
 4. **Abra o Console do navegador** (F12) para ver os outputs dos exemplos
 
+### Servindo o `index.html` com NestJS (opcional)
+
+Se preferir demonstrar o material via servidor, há um projeto Nest já configurado na pasta `aula_java_script_web_server`:
+
+```
+cd aula_java_script_web_server
+npm install          # apenas na primeira vez
+npm run start:dev    # inicia o servidor em http://localhost:3000
+```
+
+Rota disponíveis:
+- `GET /` – retorna o conteúdo do `index.html`
+- `GET /info` – exemplo simples de rota JSON para fins didáticos
+
 ## 💡 Para Professores
 
 Cada arquivo HTML é autocontido e pode ser demonstrado individualmente. Os exemplos seguem a progressão da apresentação e incluem:

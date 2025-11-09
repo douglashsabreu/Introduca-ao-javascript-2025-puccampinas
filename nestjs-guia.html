@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia Rápido NestJS — Controllers, Providers e Modules</title>
+    <style>
+      :root { --p1:#667eea; --p2:#764ba2; }
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0; background:linear-gradient(135deg, var(--p1), var(--p2)); }
+      .container { max-width: 1000px; margin: 0 auto; background:#fff; padding:32px; border-radius:16px; box-shadow: 0 16px 40px rgba(0,0,0,.25); margin-top:24px; margin-bottom:24px; }
+      h1 { margin: 0 0 8px; color: var(--p1); }
+      h2 { color: var(--p2); border-bottom: 3px solid var(--p1); padding-bottom: 6px; margin-top: 28px; }
+      p { line-height: 1.6; color:#333; }
+      .tip { background:#f7f9ff; border-left:4px solid var(--p1); padding:12px 14px; border-radius:8px; margin:12px 0; }
+      pre { background:#0f172a; color:#e2e8f0; padding:14px; border-radius:10px; overflow:auto; }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.95em; }
+      .back { display:inline-block; margin-bottom:16px; text-decoration:none; color:#fff; background:linear-gradient(135deg, var(--p1), var(--p2)); padding:10px 16px; border-radius:8px; }
+      ul { margin: 8px 0 8px 18px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a class="back" href="index.html">← Voltar para os exemplos</a>
+      <h1>Guia Rápido NestJS</h1>
+      <p>Baseado na documentação oficial do NestJS: controllers, providers (services) e modules. Aqui mostramos como este repositório utiliza essas peças para expor o <code>index.html</code> como servidor simples para demonstração em aula.</p>
+
+      <div class="tip">
+        <strong>Onde está o projeto Nest?</strong> Pasta <code>aula_java_script_web_server</code>.<br />
+        Comandos básicos:
+        <pre><code>cd aula_java_script_web_server
+npm install        # primeira vez
+npm run start:dev  # inicia em http://localhost:3000</code></pre>
+      </div>
+
+      <h2>Controllers</h2>
+      <p>Controllers recebem as requisições e retornam respostas. Usamos decorators como <code>@Controller()</code> e <code>@Get()</code> para mapear rotas.</p>
+      <pre><code>// src/app.controller.ts
+import { Controller, Get } from '@nestjs/common';
+import { AppService } from './app.service';
+
+@Controller()
+export class AppController {
+  constructor(private readonly appService: AppService) {}
+
+  @Get()            // GET /
+  getIndex(): string {
+    return this.appService.getIndexHtml();
+  }
+
+  @Get('info')      // GET /info
+  getLessonInfo() {
+    return this.appService.getLessonInfo();
+  }
+}
+</code></pre>
+      <p>Exemplo alternativo (da docs) com prefixo de rota e parâmetros:</p>
+      <pre><code>@Controller('cats')        // base: /cats
+export class CatsController {
+  @Get(':id')          // GET /cats/:id
+  findOne(@Param('id') id: string) {
+    return { id };
+  }
+}
+</code></pre>
+
+      <h2>Providers (Services)</h2>
+      <p>Providers encapsulam lógica reutilizável e podem ser injetados (DI). Marcamos com <code>@Injectable()</code>.</p>
+      <pre><code>// src/app.service.ts
+import { Injectable } from '@nestjs/common';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+@Injectable()
+export class AppService {
+  getIndexHtml(): string {
+    const indexPath = join(process.cwd(), '..', 'index.html');
+    return readFileSync(indexPath, 'utf8');
+  }
+
+  getLessonInfo() {
+    return {
+      rota: 'GET /info',
+      objetivo: 'Exemplo simples de rota no NestJS para fins didáticos',
+      conteudo: 'Retorna um objeto com informações da aula',
+    };
+  }
+}
+</code></pre>
+      <p>Na prática, o controller chama o service para obter dados/HTML e responder.</p>
+
+      <h2>Modules</h2>
+      <p>Modules organizam a aplicação. O <code>AppModule</code> agrega controllers e providers.</p>
+      <pre><code>// src/app.module.ts
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+
+@Module({
+  imports: [],
+  controllers: [AppController],
+  providers: [AppService],
+})
+export class AppModule {}
+</code></pre>
+
+      <h2>Testando rapidamente</h2>
+      <ul>
+        <li>Acesse <code>http://localhost:3000/</code> → deve retornar o conteúdo do <code>index.html</code>.</li>
+        <li>Acesse <code>http://localhost:3000/info</code> → resposta JSON com informações da aula.</li>
+      </ul>
+
+      <h2>Próximos passos</h2>
+      <ul>
+        <li>Adicionar novas rotas em <code>AppController</code> (ex.: <code>@Get('alunos')</code>).</li>
+        <li>Criar novos services para separar responsabilidades.</li>
+        <li>Criar módulos por domínio (ex.: <code>AlunosModule</code>).</li>
+      </ul>
+    </div>
+  </body>
+  </html>
+
